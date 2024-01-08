@@ -1,7 +1,27 @@
-# Getting started with the Elastic Stack and Docker-Compose
+# Elastic Stack For Circle
 
-This repo is in reference to the blog [Getting started with the Elastic Stack and Docker-Compose](https://www.elastic.co/blog/getting-started-with-the-elastic-stack-and-docker-compose)
+Only use this for development purpose
 
-Please feel free to ask any questions via issues [here](https://github.com/elkninja/elastic-stack-docker-part-one/issues), our [Community Slack](https://ela.st/slack), or over in our [Discuss Forums](https://discuss.elastic.co/).
+### Usage
 
-Pull Requests welcome :)
+Change password in the .env file
+
+```
+ELASTIC_PASSWORD=changeme
+```
+
+Run the docker-compose file
+
+```bash
+docker-compose up -d
+```
+
+You might need the CA crt file for authentication
+
+```bash
+docker exec -it circle-es01-1 sh
+
+cd /usr/share/elasticsearch/config/certs/ca
+
+cat ca.crt
+```
